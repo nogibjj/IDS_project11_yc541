@@ -3,29 +3,38 @@
 ## Overview
 This README provides my operations and instructions on setting up a data pipeline in Databricks. The small project reads data from a CSV file, performs simple transformations, and writes the result to a Parquet file.
 
-## Requirements
-- Databricks account
-- Cluster in Databricks
-- CSV file for data source
+ reference: https://docs.databricks.com/en/getting-started/data-pipeline-get-started.html
 
-## Steps to Setup the Pipeline
-1. **Environment Setup**: Log in to Databricks and ensure your cluster is running.
-2. **Create a Notebook**: Create a new notebook in your Databricks workspace.
-3. **Data Source**: Use Spark to read data from a CSV file.
-    ```python
-    data_source = spark.read.csv("/path/to/your/csvfile.csv", header=True, inferSchema=True)
-    ```
-4. **Data Processing**: Apply necessary data transformations.
-    ```python
-    transformed_data = data_source.filter(data_source["column_name"] > 0)
-    ```
-5. **Data Sink**: Write the transformed data to a Parquet file.
-    ```python
-    transformed_data.write.parquet("/path/to/output/directory")
-    ```
-6. **Execution**: Run each cell in the notebook to execute the pipeline.
-7. **Documentation**: Prepare a document or video demonstrating the pipeline workflow.
+The dataset used in this example is a subset of the Million Song Dataset( http://millionsongdataset.com/pages/getting-dataset/#subset)
 
-## Additional Notes
-- Modify the data source and sink paths as per your setup.
-- Adjust the transformation logic based on your specific data processing needs.
+# Data Pipeline Project
+
+## Steps
+
+1. **Create Cluster**: Set up a Databricks cluster to process the data.
+    ![alt text](./images/create_cluster.PNG)
+
+2. **Ingest Data**: Load the subset of the Million Song Dataset into Databricks.
+    ![alt text](./images/ingest_data.PNG)
+
+3. **Prepare Data**: Perform data cleaning and preparation.
+    ![alt text](./images/prepare_data.PNG)
+
+4. **Analyse Data**: Conduct data analysis to derive insights.
+    ![alt text](./images/analyse_data.PNG)
+
+5. **Workspace Overview**: View all notebooks used in this project.
+    ![alt text](./images/workspace.PNG)
+
+6. **Workflow**: Overview of the complete data pipeline.
+    ![alt text](./images/workflow.PNG)
+
+## Dataset Reference
+
+- The dataset used is a subset of the [Million Song Dataset](http://millionsongdataset.com/pages/getting-dataset/#subset).
+
+## Documentation Reference
+
+- The steps followed in this project are based on the [Databricks documentation](https://docs.databricks.com/en/getting-started/data-pipeline-get-started.html).
+
+
